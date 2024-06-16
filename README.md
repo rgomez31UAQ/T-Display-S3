@@ -42,31 +42,31 @@
 └── ULP_Count                    #  Example of register counting for ULP-FSM(arduino_esp32 version: 3.0.0-rc3)
 ```
 
-## 3️⃣ PlatformIO Quick Start (Recommended)
+## 3️⃣ PlatformIO Inicio rápido (recomendado)
 
-1. Install [Visual Studio Code](https://code.visualstudio.com/) and [Python](https://www.python.org/)
-2. Search for the `PlatformIO` plugin in the `VisualStudioCode` extension and install it.
-3. After the installation is complete, you need to restart `VisualStudioCode`
-4. After restarting `VisualStudioCode`, select `File` in the upper left corner of `VisualStudioCode` -> `Open Folder` -> select the `T-Display-S3` directory
-5. Wait for the installation of third-party dependent libraries to complete
-6. Click on the `platformio.ini` file, and in the `platformio` column
-7. Uncomment one of the lines `default_envs = xxxx` to make sure only one line works
-8. Click the (✔) symbol in the lower left corner to compile
-9. Connect the board to the computer USB
-10. Click (→) to upload firmware
-11. Click (plug symbol) to monitor serial output
-12. If it cannot be written, or the USB device keeps flashing, please check the **FAQ** below
+1. Install [Visual Studio Code](https://code.visualstudio.com/) y [Python](https://www.python.org/)
+2. Busca el plugin `PlatformIO` en la extensión `VisualStudioCode` e instálalo.
+3. Una vez finalizada la instalación, deberá reiniciar `VisualStudioCode`.
+4. Después de reiniciar `VisualStudioCode`, seleccione `File` en la esquina superior izquierda de `VisualStudioCode` -> `Open Folder` -> seleccione el directorio `T-Display-S3`.
+5. Espere a que finalice la instalación de las bibliotecas dependientes de terceros
+6. Haga clic en el archivo `platformio.ini` y en la columna `platformio
+7. Descomenta una de las líneas `default_envs = xxxx` para asegurarte de que sólo funciona una línea
+8. Haga clic en el símbolo (✔) en la esquina inferior izquierda para compilar
+9. Conectar la placa al ordenador USB
+10. Haga clic en (→) para cargar el firmware
+11. Haga clic en (símbolo de clavija) para supervisar la salida serie
+12. Si no se puede escribir, o el dispositivo USB sigue parpadeando, por favor, compruebe el **FAQ** a continuación
 
 
 ## 4️⃣  Arduino IDE Manual installation
 
-1. Install [Arduino IDE](https://www.arduino.cc/en/software)
-2. Install [Arduino ESP32 V 2.0.5 or above and below V3.0](https://docs.espressif.com/projects/arduino-esp32/en/latest/)
-3. Download `T-Display-S3` , move to Arduino library folder (e.g. C:\Users\YourName\Documents\Arduino\libraries)
-4. Copy all folders in [lib folder](./lib/) to Arduino library folder (e.g. C:\Users\YourName\Documents\Arduino\libraries)
-5. Enter the downloaded `T-Display-S3/examples` directory
-6. Select any example and double-click the `any_example.ino` to open it
-7. Open ArduinoIDE ,`Tools` ，Make your selection according to the table below
+1. Instalar [Arduino IDE](https://www.arduino.cc/en/software)
+2. Instalar [Arduino ESP32 V 2.0.5 o superior y por debajo de V3.0](https://docs.espressif.com/projects/arduino-esp32/en/latest/)
+3. Descargar `T-Display-S3` , mover a la carpeta de la biblioteca Arduino (e.g. C:\Users\YourName\Documents\Arduino\libraries)
+4. Copie todas las carpetas de la [carpeta lib](./lib/) en la carpeta de bibliotecas de Arduino (por ejemplo, C:\Users\SuNombre\Documents\Arduino\libraries).
+5. Entre en el directorio descargado `T-Display-S3/examples`.
+6. Seleccione cualquier ejemplo y haga doble clic en `any_example.ino` para abrirlo
+7. Abra ArduinoIDE ,`Tools` ，Haga su selección de acuerdo con la siguiente tabla.
     | Arduino IDE Setting                  | Value                             |
     | ------------------------------------ | --------------------------------- |
     | Board                                | **ESP32S3 Dev Module**            |
@@ -86,12 +86,12 @@
     | Upload Mode                          | **UART0/Hardware CDC**            |
     | Upload Speed                         | 921600                            |
     | USB Mode                             | **CDC and JTAG**                  |
-    * The options in bold are required, others are selected according to actual conditions.
+    * Las opciones en negrita son obligatorias, las demás se seleccionan en función de las condiciones reales.
 
-8. Click `upload` , Wait for compilation and writing to complete
-9. If it cannot be written, or the USB device keeps flashing, please check the **FAQ** below
+8. Espere a que se complete la compilación y la escritura.
+9. Si no se puede escribir, o el dispositivo USB sigue parpadeando, por favor revise el **FAQ** a continuación
 
-* You can also choose `LilyGo T-Display-S3` as the board, but the partition table is fixed to **16M Flash (3M APP/9.9MB FATFS)**
+* También puede elegir `LilyGo T-Display-S3` como placa, pero la tabla de particiones se fija en **16M Flash (3M APP/9.9MB FATFS)**.
 * [T-Display-S3 Arduino IDE Record](https://www.youtube.com/watch?v=PgtxisFvMcc)
 
 ## 5️⃣ ESP-IDF
