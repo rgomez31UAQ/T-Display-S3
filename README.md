@@ -44,7 +44,7 @@
 
 ## 3️⃣ PlatformIO Inicio rápido (recomendado)
 
-1. Install [Visual Studio Code](https://code.visualstudio.com/) y [Python](https://www.python.org/)
+1. Instalar [Visual Studio Code](https://code.visualstudio.com/) y [Python](https://www.python.org/)
 2. Busca el plugin `PlatformIO` en la extensión `VisualStudioCode` e instálalo.
 3. Una vez finalizada la instalación, deberá reiniciar `VisualStudioCode`.
 4. Después de reiniciar `VisualStudioCode`, seleccione `File` en la esquina superior izquierda de `VisualStudioCode` -> `Open Folder` -> seleccione el directorio `T-Display-S3`.
@@ -96,7 +96,7 @@
 
 ## 5️⃣ ESP-IDF
 
-* `T-Display-S3` esp-idf version example, please jump to this [LilyGo-Display-IDF](https://github.com/Xinyuan-LilyGO/LilyGo-Display-IDF)
+* `T-Display-S3` esp-idf ejemplo de versión, vaya a [LilyGo-Display-IDF](https://github.com/Xinyuan-LilyGO/LilyGo-Display-IDF)
 
 ## 6️⃣ Micropython
 
@@ -104,13 +104,13 @@
 * [Micropython](https://github.com/Xinyuan-LilyGO/lilygo-micropython)
 
 
-# 7️⃣ ESP32 basic examples
+# 7️⃣ ESP32 ejemplos básicos
 
 * [BLE Examples](https://github.com/espressif/arduino-esp32/tree/master/libraries/BLE)
 * [WiFi Examples](https://github.com/espressif/arduino-esp32/tree/master/libraries/WiFi)
 * [SPIFFS Examples](https://github.com/espressif/arduino-esp32/tree/master/libraries/SPIFFS)
 * [FFat Examples](https://github.com/espressif/arduino-esp32/tree/master/libraries/FFat)
-* For more examples of esp32 chip functions, please refer to [arduino-esp32-libraries](https://github.com/espressif/arduino-esp32/tree/master/libraries)
+* Para más ejemplos de funciones del chip esp32, por favor consulte [arduino-esp32-libraries](https://github.com/espressif/arduino-esp32/tree/master/libraries)
 
 
 # 8️⃣ Resource
@@ -124,9 +124,9 @@
 
 ## 9️⃣ FAQ
 
-1. **The screen does not light up when using battery?**
-   * When T-Display-S3 is powered by battery, GPIO15 must be set to HIGH to turn on the backlight.
-   * Please add the following two lines at the beginning of the setup
+1. **La pantalla no se enciende cuando se utiliza la batería?**
+   * Cuando el T-Display-S3 funciona con batería, GPIO15 debe estar en HIGH para encender la retroiluminación.
+   * Por favor, añada las dos líneas siguientes al principio de la configuración
    ```C++
    void setup(){
       //Turn on display power
@@ -135,35 +135,36 @@
    }
    
    ```
-2.  **The program can be written normally, but there is still no display after writing**
-   * If you are using **TFT_eSPI**, then you can try running `Arduino_GFXDemo` first. If nothing is displayed after writing, you can determine that there is a problem with the hardware.
-   * If `Arduino_GFXDemo` is written normally, but **TFT_eSPI** is not displayed, then it can be judged that `User_Setup_Select` has been overwritten, then please read the third article of **FAQ** to reconfigure **TFT_eSPI**
-3. **How to update **TFT_eSPI**, or confirm whether the **TFT_eSPI** pin configuration is correct?**
-   * Search for **TFT_eSPI** in the ArduinoIDE library manager and click Update.
-   * Enter the default library manager installation location and open the **TFT_eSPI** folder. The default installation location is:(e.g. C:\Users\YourName\Documents\Arduino\libraries)
-   * Open User_Setup_Select.h, comment out #include <User_Setup.h> which is enabled by default, or delete it
-   * Search **Setup206_LilyGo_T_Display_S3**, find it, cancel the previous comment, then save it, and finally close it, so that TFT_eSPI uses the pin definition of T-Display-S3 by default
+2.  **El programa puede escribirse con normalidad, pero no se muestra nada después de escribir**.
+   * Si está utilizando **TFT_eSPI**, entonces puede intentar ejecutar `Arduino_GFXDemo` primero. Si no se muestra nada después de escribir, puede determinar que hay un problema con el hardware.
+   * Si `Arduino_GFXDemo` se escribe normalmente, pero **TFT_eSPI** no se muestra, entonces se puede juzgar que `User_Setup_Select` ha sido sobreescrito, entonces por favor lea el tercer artículo de **FAQ** para reconfigurar **TFT_eSPI**.
+3. **¿Cómo actualizar **TFT_eSPI**, o confirmar si la configuración de pines **TFT_eSPI** es correcta?**.
+   * Busca **TFT_eSPI** en el gestor de librerías de ArduinoIDE y haz clic en Actualizar.
+   * Entre en la ubicación de instalación por defecto del gestor de librerías y abra la carpeta **TFT_eSPI**. La ubicación de instalación por defecto es:(p.ej. 
+     C:\NUsuNombreDocumentos\NArduino\libraries).
+   * Abra User_Setup_Select.h, comente #include <User_Setup.h> que está activado por defecto, o bórrelo.
+   * Busca **Setup206_LilyGo_T_Display_S3**, encuéntralo, cancela el comentario anterior, luego guárdalo, y finalmente ciérralo, para que TFT_eSPI use la definición de pin de T-Display-S3 por defecto.
    ```c++
-   #include <User_Setups/Setup206_LilyGo_T_Display_S3.h>     // For the LilyGo T-Display S3 based ESP32S3 with ST7789 170 x 320 TFT
+   #include <User_Setups/Setup206_LilyGo_T_Display_S3.h>     // Para el LilyGo T-Display S3 basado en ESP32S3 con ST7789 170 x 320 TFT
    ```
-4. **Can't upload any sketch，Please enter the upload mode manually.**
-   * Connect the board via the USB cable
-   * Press and hold the **BOOT** button , While still pressing the **BOOT** button
-   * Press **RST** button
+4. **No se puede cargar ningún boceto, por favor entre en el modo de carga manualmente.
+   * Conectar la placa mediante el cable USB
+   * Mantén pulsado el botón **BOOT** , Mientras sigues pulsando el botón **BOOT**
+   * Pulse el botón **RST**.
    * Release the **RST** button
-   * Release the **BOOT** button (If there is no **BOOT** button, disconnect IO0 from GND.)
-   * Upload sketch
-   * Press the **RST** button to exit download mode
+   * Suelte el botón **BOOT** (Si no hay botón **BOOT**, desconecte IO0 de GND).
+   * Cargar sketch
+   * Pulse el botón **RST** para salir del modo de descarga.
 
-5. **If you use external power supply instead of USB-C, please turn off the CDC option. This is because the board will wait for USB access when it starts.**
+5. **Si utiliza una fuente de alimentación externa en lugar de USB-C, desactive la opción CDC. Esto se debe a que la placa esperará el acceso USB cuando se inicie.**
 
-   * For Arduino IDE users, it can be turned off in the options , Please note that turning off USB CDC will turn off Serial redirection to USBC. At this time, you will not see any Serial message output when opening the port from USB-C, but output from GPIO43 and GPIO44.
+   * Para los usuarios de Arduino IDE, se puede desactivar en las opciones , Tenga en cuenta que al desactivar USB CDC se desactivará la redirección Serial a USBC. En este momento, usted no verá ningún mensaje Serial de salida al abrir el puerto desde USB-C, pero la salida de GPIO43 y GPIO44.
 
    ```c
    Tools -> USB CDC On Boot -> Disable
    ```
 
-   * For platformio users, you can add the following compilation flags in the ini file
+   * Para los usuarios de platformio, puede añadir las siguientes opciones de compilación en el archivo ini
 
    ```c
    build_flags =
@@ -174,7 +175,7 @@
        -UARDUINO_USB_CDC_ON_BOOT
    ```
 
-6. **If all the above are invalid, please flash the factory firmware for quick verification, please check [here](./firmware/README.MD)**
-7. **Can I use an external 5V pin for power? Please see here [issues/205](https://github.com/Xinyuan-LilyGO/T-Display-S3/issues/205)**
-9. The default charging current is set at 500mA per hour. If you need to adjust the charging current, please see this [issue](https://github.com/Xinyuan-LilyGO/T-Display-S3/issues/230)
+6. **Si todo lo anterior no es válido, por favor flashear el firmware de fábrica para una verificación rápida, por favor revise [aquí](./firmware/README.MD)**.
+7. **¿Puedo utilizar un pin externo de 5V para la alimentación? Por favor, consulte aquí [issues/205](https://github.com/Xinyuan-LilyGO/T-Display-S3/issues/205)**
+9. La corriente de carga por defecto es de 500mA por hora. Si necesita ajustar la corriente de carga, consulte esta [edición](https://github.com/Xinyuan-LilyGO/T-Display-S3/issues/230)
 
